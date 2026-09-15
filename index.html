@@ -33,28 +33,23 @@
 
   <form id="applicationForm" novalidate>
 
-    <!-- STEP 1 — PERSONAL -->
     <section class="step active" data-step="1">
       <h2>Personal Information</h2>
-
       <div class="field">
         <label for="fullName">Full Name <span class="req">*</span></label>
         <input type="text" id="fullName" name="fullName" placeholder="e.g. Muhammad Umar" autocomplete="name" />
         <small class="error" data-error-for="fullName"></small>
       </div>
-
       <div class="field">
         <label for="studentId">Student ID <span class="req">*</span></label>
         <input type="text" id="studentId" name="studentId" placeholder="e.g. 245168" />
         <small class="error" data-error-for="studentId"></small>
       </div>
-
       <div class="field">
         <label for="email">Email <span class="req">*</span></label>
         <input type="email" id="email" name="email" placeholder="your.name@example.com" autocomplete="email" />
         <small class="error" data-error-for="email"></small>
       </div>
-
       <div class="field">
         <label for="contactNumber">Contact Number <span class="req">*</span></label>
         <input type="tel" id="contactNumber" name="contactNumber" placeholder="03XXXXXXXXX" autocomplete="tel" inputmode="numeric" />
@@ -63,10 +58,8 @@
       </div>
     </section>
 
-    <!-- STEP 2 — ACADEMIC -->
     <section class="step" data-step="2">
       <h2>Academic Information</h2>
-
       <div class="field">
         <label for="program">Program / Department <span class="req">*</span></label>
         <select id="program" name="program">
@@ -83,7 +76,6 @@
         </select>
         <small class="error" data-error-for="program"></small>
       </div>
-
       <div class="field">
         <label for="semester">Semester <span class="req">*</span></label>
         <select id="semester" name="semester">
@@ -99,7 +91,6 @@
         </select>
         <small class="error" data-error-for="semester"></small>
       </div>
-
       <div class="field">
         <label for="section">Section <span class="req">*</span></label>
         <input type="text" id="section" name="section" placeholder="e.g. A, B, C" />
@@ -107,10 +98,8 @@
       </div>
     </section>
 
-    <!-- STEP 3 — POSITION + TEAM -->
     <section class="step" data-step="3">
       <h2>Position &amp; Team</h2>
-
       <div class="field">
         <label>Which position are you applying for? <span class="req">*</span></label>
         <div class="radio-row">
@@ -120,65 +109,42 @@
         </div>
         <small class="error" data-error-for="position"></small>
       </div>
-
       <div class="field">
         <label>Which team do you want to join? <span class="req">*</span></label>
         <small class="error" data-error-for="team"></small>
         <div class="team-grid">
           <label class="team-card">
             <input type="radio" name="team" value="Media" />
-            <div class="team-content">
-              <h3>Media</h3>
-              <p>Photography, videography, event coverage, creative media production, visual documentation.</p>
-            </div>
+            <div class="team-content"><h3>Media</h3><p>Photography, videography, event coverage, creative production.</p></div>
           </label>
           <label class="team-card">
             <input type="radio" name="team" value="Social Media / PR" />
-            <div class="team-content">
-              <h3>Social Media / PR</h3>
-              <p>Posts, promotions, public relations, communication, online engagement.</p>
-            </div>
+            <div class="team-content"><h3>Social Media / PR</h3><p>Posts, promotions, public relations, engagement.</p></div>
           </label>
           <label class="team-card">
             <input type="radio" name="team" value="Gaming" />
-            <div class="team-content">
-              <h3>Gaming</h3>
-              <p>Gaming activities, tournaments, competitions, event coordination.</p>
-            </div>
+            <div class="team-content"><h3>Gaming</h3><p>Gaming activities, tournaments, event coordination.</p></div>
           </label>
           <label class="team-card">
             <input type="radio" name="team" value="Security" />
-            <div class="team-content">
-              <h3>Security</h3>
-              <p>Event security, discipline, crowd management, safe environment.</p>
-            </div>
+            <div class="team-content"><h3>Security</h3><p>Event security, discipline, crowd management.</p></div>
           </label>
           <label class="team-card">
             <input type="radio" name="team" value="Decor" />
-            <div class="team-content">
-              <h3>Decor</h3>
-              <p>Stage decoration, aesthetics, creative setups, event ambiance.</p>
-            </div>
+            <div class="team-content"><h3>Decor</h3><p>Stage decoration, aesthetics, creative setups.</p></div>
           </label>
           <label class="team-card">
             <input type="radio" name="team" value="IT" />
-            <div class="team-content">
-              <h3>IT</h3>
-              <p>Tech support, event systems, digital tools, tech coordination.</p>
-            </div>
+            <div class="team-content"><h3>IT</h3><p>Tech support, event systems, digital tools.</p></div>
           </label>
           <label class="team-card">
             <input type="radio" name="team" value="Management" />
-            <div class="team-content">
-              <h3>Management</h3>
-              <p>Event planning, logistics, coordination, team organization.</p>
-            </div>
+            <div class="team-content"><h3>Management</h3><p>Event planning, logistics, coordination.</p></div>
           </label>
         </div>
       </div>
     </section>
 
-    <!-- STEP 4 — CONTRIBUTION + COMMITMENT -->
     <section class="step" data-step="4">
       <h2>Contribution &amp; Commitment</h2>
 
