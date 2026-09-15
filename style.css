@@ -152,7 +152,6 @@ form{
 .status.error{color:var(--danger)}
 .status.info{color:var(--muted)}
 
-/* NAV */
 .nav-buttons{display:flex;gap:.75rem;justify-content:flex-end;margin-top:1.5rem}
 
 /* SUCCESS */
