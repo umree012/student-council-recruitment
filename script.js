@@ -89,7 +89,7 @@ function validateStep(step){
 
     const phone = getValue("contactNumber").replace(/\D/g, "");
     if(!phone){ setError("contactNumber","Please enter your contact number."); ok = false; }
-    else if(!/^03\d{9}$/.test(phone)){ setError("contactNumber","Enter a valid Pakistani number, e.g. 03001234567."); ok = false; }
+    else if(!/^03\d{9}$/.test(phone)){ setError("contactNumber","Enter 11 digits starting with 03, e.g. 03001234567."); ok = false; }
   }
 
   if(step === 2){
@@ -232,15 +232,10 @@ form.addEventListener("submit", async function(e){
     });
     const text = await res.text();
     let data;
-    try {
-      data = JSON.parse(text);
-    } catch(parseErr){
-      throw new Error("Server returned non-JSON response: " + text.slice(0, 200));
-    }
+    try { data = JSON.parse(text); }
+    catch(parseErr){ throw new Error("Server returned non-JSON response: " + text.slice(0, 200)); }
 
-    if(!data.success){
-      throw new Error(data.error || "Submission failed.");
-    }
+    if(!data.success) throw new Error(data.error || "Submission failed.");
 
     appIdOut.textContent = data.applicationId || "—";
     form.hidden = true;
