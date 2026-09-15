@@ -1,5 +1,5 @@
 /* ============================================================
-   CONFIGURATION
+   CONFIGURATION — paste your Apps Script /exec URL here
    ============================================================ */
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbcy77dETLh0HZMeaStUk3KaHu4kpcgCJReK_c3xWiL_qpA17-jBILLTJjPaSwo0sKKVhLhQ/exec";
@@ -22,7 +22,7 @@ const appIdOut = document.getElementById("appIdOut");
 const backHomeBtn = document.getElementById("backHomeBtn");
 const applyNowBtn = document.getElementById("applyNowBtn");
 
-const STEP_NAMES = ["Personal Information","Academic Information","Position & Team","Contribution & Commitment"];
+const STEP_NAMES = ["Personal Information","Academic Information","Team Preference","Motivation & Experience","Review & Submit"];
 let current = 1;
 const totalSteps = steps.length;
 
@@ -38,8 +38,8 @@ function getValue(name){
   return el.value.trim();
 }
 
-function setError(name, message){
-  const el = form.querySelector('[data-error-for="' + name + '"]');
+function setError(name,message){
+  const el = form.querySelector(`[data-error-for="${name}"]`);
   const field = form.elements[name];
   if(el) el.textContent = message || "";
   if(field && field.classList){
@@ -53,7 +53,7 @@ function clearAllErrors(){
   form.querySelectorAll(".invalid").forEach(e => e.classList.remove("invalid"));
 }
 
-function showStatus(msg, type){
+function showStatus(msg,type){
   statusEl.textContent = msg;
   statusEl.className = "status" + (type ? " " + type : "");
 }
@@ -74,37 +74,29 @@ function validateStep(step){
     if(!name){ setError("fullName","Please enter your full name."); ok = false; }
     else if(name.length < 3){ setError("fullName","Name looks too short."); ok = false; }
 
-    if(!getValue("studentId")){ setError("studentId","Please enter your student ID."); ok = false; }
-
-    const email = getValue("email");
-    if(!email){ setError("email","Please enter your email."); ok = false; }
-    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ setError("email","Enter a valid email address."); ok = false; }
-
-    const wa = getValue("contactNumber").replace(/\D/g,"");
-    if(!wa){ setError("contactNumber","Please enter your contact number."); ok = false; }
-    else if(!/^03\d{9}$/.test(wa)){ setError("contactNumber","Enter a valid Pakistani number, e.g. 03001234567."); ok = false; }
+    const wa = getValue("whatsapp").replace(/\D/g,"");
+    if(!wa){ setError("whatsapp","Please enter your WhatsApp number."); ok = false; }
+    else if(!/^03\d{9}$/.test(wa)){ setError("whatsapp","Enter a valid Pakistani number, e.g. 03001234567."); ok = false; }
   }
 
   if(step === 2){
-    if(!getValue("program")){ setError("program","Please select your program."); ok = false; }
+    if(!getValue("department")){ setError("department","Please select your department."); ok = false; }
+    if(!getValue("registrationId")){ setError("registrationId","Please enter your registration ID."); ok = false; }
     if(!getValue("semester")){ setError("semester","Please select your semester."); ok = false; }
-    if(!getValue("section")){ setError("section","Please enter your section."); ok = false; }
   }
 
   if(step === 3){
-    if(!getValue("position")){ setError("position","Please select a position."); ok = false; }
-    if(!getValue("team")){ setError("team","Please select a team."); ok = false; }
+    if(!getValue("interestedTeam")){ setError("interestedTeam","Please select a team."); ok = false; }
   }
 
   if(step === 4){
-    const c = getValue("contribution");
-    if(!c){ setError("contribution","Please tell us how you can contribute."); ok = false; }
-    else if(c.length < 30){ setError("contribution","Please write at least 30 characters."); ok = false; }
+    const motivation = getValue("motivation");
+    if(!motivation){ setError("motivation","Please tell us why you want to join."); ok = false; }
+    else if(motivation.length < 30){ setError("motivation","Please write at least 30 characters."); ok = false; }
+  }
 
-    if(!getValue("shortNotice")){ setError("shortNotice","Please answer this question."); ok = false; }
-    if(!getValue("otherSociety")){ setError("otherSociety","Please answer this question."); ok = false; }
-    if(!getValue("activeParticipation")){ setError("activeParticipation","Please answer this question."); ok = false; }
-    if(!getValue("priorExperience")){ setError("priorExperience","Please answer this question. Write 'No prior experience' if none."); ok = false; }
+  if(step === 5){
+    if(!getValue("willingToParticipate")){ setError("willingToParticipate","Please answer this question."); ok = false; }
   }
 
   return ok;
@@ -115,20 +107,20 @@ function validateStep(step){
    ============================================================ */
 function renderStep(){
   steps.forEach(s => s.classList.toggle("active", Number(s.dataset.step) === current));
-  stepLabel.textContent = "Step " + current + " of " + totalSteps;
+  stepLabel.textContent = `Step ${current} of ${totalSteps}`;
   stepName.textContent = STEP_NAMES[current-1];
-  progressFill.style.width = ((current/totalSteps)*100) + "%";
+  progressFill.style.width = `${(current/totalSteps)*100}%`;
 
-  prevBtn.hidden = (current === 1);
-  nextBtn.hidden = (current === totalSteps);
-  submitBtn.hidden = (current !== totalSteps);
+  prevBtn.hidden = current === 1;
+  nextBtn.hidden = current === totalSteps;
+  submitBtn.hidden = current !== totalSteps;
 
   if(current === totalSteps) renderReview();
   showStatus("");
 }
 
 nextBtn.addEventListener("click", () => {
-  if(!validateStep(current)){ showStatus("Please complete the required fields.","error"); return; }
+  if(!validateStep(current)) { showStatus("Please complete the required fields.","error"); return; }
   current++;
   renderStep();
   scrollToForm();
@@ -146,23 +138,18 @@ prevBtn.addEventListener("click", () => {
 function renderReview(){
   const fields = [
     ["Full Name","fullName"],
-    ["Student ID","studentId"],
-    ["Email","email"],
-    ["Contact Number","contactNumber"],
-    ["Program","program"],
+    ["WhatsApp","whatsapp"],
+    ["Department","department"],
+    ["Registration ID","registrationId"],
     ["Semester","semester"],
-    ["Section","section"],
-    ["Position","position"],
-    ["Team","team"],
-    ["Contribution","contribution"],
-    ["Short Notice","shortNotice"],
-    ["Other Society","otherSociety"],
-    ["Active Participation","activeParticipation"],
-    ["Prior Experience","priorExperience"]
+    ["Team","interestedTeam"],
+    ["Motivation","motivation"],
+    ["Previous Experience","previousExperience"],
+    ["Willing to Participate","willingToParticipate"],
   ];
-  reviewList.innerHTML = fields.map(pair => {
-    const val = getValue(pair[1]) || "—";
-    return "<dt>" + pair[0] + "</dt><dd>" + escapeHtml(val) + "</dd>";
+  reviewList.innerHTML = fields.map(([label,name]) => {
+    const val = getValue(name) || "—";
+    return `<dt>${label}</dt><dd>${escapeHtml(val)}</dd>`;
   }).join("");
 }
 
@@ -177,6 +164,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   if(submitBtn.disabled) return;
 
+  // validate all steps quietly
   for(let s = 1; s <= totalSteps; s++){
     if(!validateStep(s)){
       current = s;
@@ -189,19 +177,14 @@ form.addEventListener("submit", async (e) => {
 
   const payload = {
     fullName: getValue("fullName"),
-    studentId: getValue("studentId"),
-    email: getValue("email"),
-    contactNumber: getValue("contactNumber"),
-    program: getValue("program"),
+    department: getValue("department"),
+    registrationId: getValue("registrationId"),
     semester: getValue("semester"),
-    section: getValue("section"),
-    position: getValue("position"),
-    team: getValue("team"),
-    contribution: getValue("contribution"),
-    shortNotice: getValue("shortNotice"),
-    otherSociety: getValue("otherSociety"),
-    activeParticipation: getValue("activeParticipation"),
-    priorExperience: getValue("priorExperience")
+    whatsapp: getValue("whatsapp"),
+    interestedTeam: getValue("interestedTeam"),
+    motivation: getValue("motivation"),
+    previousExperience: getValue("previousExperience") || "No previous experience",
+    willingToParticipate: getValue("willingToParticipate"),
   };
 
   submitBtn.disabled = true;
@@ -212,12 +195,10 @@ form.addEventListener("submit", async (e) => {
   try{
     const res = await fetch(APPS_SCRIPT_URL, {
       method: "POST",
+      headers: {"Content-Type":"text/plain;charset=utf-8"},
       body: JSON.stringify(payload)
     });
-    const text = await res.text();
-    let data;
-    try { data = JSON.parse(text); }
-    catch(parseErr){ throw new Error("Server did not return valid JSON."); }
+    const data = await res.json();
 
     if(!data.success) throw new Error(data.error || "Submission failed");
 
@@ -228,7 +209,7 @@ form.addEventListener("submit", async (e) => {
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(err){
     console.error(err);
-    showStatus("Something went wrong while submitting your application. Please try again. (" + err.message + ")","error");
+    showStatus("Something went wrong while submitting your application. Please try again.","error");
     submitBtn.disabled = false;
     submitBtn.textContent = originalLabel;
   }
