@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Student Council Recruitment</title>
-<meta name="description" content="Applications are open for students interested in joining the Student Council." />
+<title>Art &amp; Literary Society — Recruitment</title>
+<meta name="description" content="Applications are open for students interested in joining the Art &amp; Literary Society." />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,11 +12,11 @@
 <header class="hero">
   <div class="hero-inner">
     <span class="badge">Applications Open</span>
-    <h1>Student Council Recruitment</h1>
-    <p class="tagline">Join. Lead. Create. Make an Impact.</p>
+    <h1>Join the Art &amp; Literary Society Family</h1>
+    <p class="tagline">Connect. Create. Inspire.</p>
     <p class="hero-desc">
-      We are looking for enthusiastic students to become part of the Student Council team.
-      Whether you are into media, social media, gaming, or security — there is a place for you.
+      Are you passionate about creativity, events, and making an impact?
+      Become part of a vibrant space where artists, writers, and team leads collaborate and shine.
     </p>
     <a href="#apply" class="btn btn-primary" id="applyNowBtn">Apply Now</a>
   </div>
@@ -25,7 +25,7 @@
 <main id="apply">
   <div class="progress-wrap">
     <div class="progress-meta">
-      <span id="stepLabel">Step 1 of 5</span>
+      <span id="stepLabel">Step 1 of 4</span>
       <span id="stepName">Personal Information</span>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
@@ -33,42 +33,57 @@
 
   <form id="applicationForm" novalidate>
 
-    <!-- STEP 1 -->
+    <!-- STEP 1 — PERSONAL -->
     <section class="step active" data-step="1">
       <h2>Personal Information</h2>
+
       <div class="field">
         <label for="fullName">Full Name <span class="req">*</span></label>
         <input type="text" id="fullName" name="fullName" placeholder="e.g. Muhammad Umar" autocomplete="name" />
         <small class="error" data-error-for="fullName"></small>
       </div>
+
       <div class="field">
-        <label for="whatsapp">WhatsApp Number <span class="req">*</span></label>
-        <input type="tel" id="whatsapp" name="whatsapp" placeholder="03XX-XXXXXXX" autocomplete="tel" />
+        <label for="studentId">Student ID <span class="req">*</span></label>
+        <input type="text" id="studentId" name="studentId" placeholder="e.g. 245160" />
+        <small class="error" data-error-for="studentId"></small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="your.name@example.com" autocomplete="email" />
+        <small class="error" data-error-for="email"></small>
+      </div>
+
+      <div class="field">
+        <label for="contactNumber">Contact Number <span class="req">*</span></label>
+        <input type="tel" id="contactNumber" name="contactNumber" placeholder="03XX-XXXXXXX" autocomplete="tel" />
         <small class="hint">Format: 03XX-XXXXXXX or 03XXXXXXXXX</small>
-        <small class="error" data-error-for="whatsapp"></small>
+        <small class="error" data-error-for="contactNumber"></small>
       </div>
     </section>
 
-    <!-- STEP 2 -->
+    <!-- STEP 2 — ACADEMIC -->
     <section class="step" data-step="2">
       <h2>Academic Information</h2>
+
       <div class="field">
-        <label for="department">Department <span class="req">*</span></label>
-        <select id="department" name="department">
-          <option value="">Select your department</option>
-          <option>Computer Science</option>
-          <option>Software Engineering</option>
-          <option>Electrical Engineering</option>
-          <option>Business Administration</option>
-          <option>Other</option>
+        <label for="program">Program / Department <span class="req">*</span></label>
+        <select id="program" name="program">
+          <option value="">Select your program</option>
+          <option>CS</option>
+          <option>CYS</option>
+          <option>SE</option>
+          <option>AVM</option>
+          <option>BBA</option>
+          <option>FINTECH</option>
+          <option>BIT</option>
+          <option>DS</option>
+          <option>AI</option>
         </select>
-        <small class="error" data-error-for="department"></small>
+        <small class="error" data-error-for="program"></small>
       </div>
-      <div class="field">
-        <label for="registrationId">Registration ID <span class="req">*</span></label>
-        <input type="text" id="registrationId" name="registrationId" placeholder="e.g. 245198" />
-        <small class="error" data-error-for="registrationId"></small>
-      </div>
+
       <div class="field">
         <label for="semester">Semester <span class="req">*</span></label>
         <select id="semester" name="semester">
@@ -84,71 +99,134 @@
         </select>
         <small class="error" data-error-for="semester"></small>
       </div>
+
+      <div class="field">
+        <label for="section">Section <span class="req">*</span></label>
+        <input type="text" id="section" name="section" placeholder="e.g. A, B, C" />
+        <small class="error" data-error-for="section"></small>
+      </div>
     </section>
 
-    <!-- STEP 3 -->
+    <!-- STEP 3 — POSITION + TEAM -->
     <section class="step" data-step="3">
-      <h2>Which Team Are You Interested In?</h2>
-      <small class="error" data-error-for="interestedTeam"></small>
-      <div class="team-grid">
-        <label class="team-card">
-          <input type="radio" name="interestedTeam" value="Media" />
-          <div class="team-content">
-            <h3>Media</h3>
-            <p>Photography, videography, event coverage, creative media production, and visual documentation.</p>
-          </div>
-        </label>
-        <label class="team-card">
-          <input type="radio" name="interestedTeam" value="Social Media / PR" />
-          <div class="team-content">
-            <h3>Social Media / PR</h3>
-            <p>Social media management, posts, communication, promotion, public relations, and online engagement.</p>
-          </div>
-        </label>
-        <label class="team-card">
-          <input type="radio" name="interestedTeam" value="Gaming" />
-          <div class="team-content">
-            <h3>Gaming</h3>
-            <p>Gaming activities, tournaments, competitions, gaming events, and related coordination.</p>
-          </div>
-        </label>
-        <label class="team-card">
-          <input type="radio" name="interestedTeam" value="Security" />
-          <div class="team-content">
-            <h3>Security</h3>
-            <p>Event security, discipline, crowd management, coordination, and maintaining a safe environment.</p>
-          </div>
-        </label>
-      </div>
-    </section>
+      <h2>Position &amp; Team</h2>
 
-    <!-- STEP 4 -->
-    <section class="step" data-step="4">
-      <h2>Motivation &amp; Experience</h2>
       <div class="field">
-        <label for="motivation">Why do you want to join the Student Council? <span class="req">*</span></label>
-        <textarea id="motivation" name="motivation" rows="6" placeholder="Tell us what drives you, what you want to contribute, and what you hope to gain."></textarea>
-        <small class="hint">Minimum 30 characters.</small>
-        <small class="error" data-error-for="motivation"></small>
-      </div>
-      <div class="field">
-        <label for="previousExperience">Previous Experience <em>(optional)</em></label>
-        <textarea id="previousExperience" name="previousExperience" rows="5" placeholder="Societies, events, leadership roles, volunteering, technical skills. Write 'No previous experience' if none."></textarea>
-      </div>
-    </section>
-
-    <!-- STEP 5 -->
-    <section class="step" data-step="5">
-      <h2>Commitment</h2>
-      <div class="field">
-        <label>Are you willing to actively participate in Student Council events and activities? <span class="req">*</span></label>
+        <label>Which position are you applying for? <span class="req">*</span></label>
         <div class="radio-row">
-          <label class="radio-pill"><input type="radio" name="willingToParticipate" value="Yes" /><span>Yes</span></label>
-          <label class="radio-pill"><input type="radio" name="willingToParticipate" value="Maybe / Depending on availability" /><span>Maybe</span></label>
-          <label class="radio-pill"><input type="radio" name="willingToParticipate" value="No" /><span>No</span></label>
+          <label class="radio-pill"><input type="radio" name="position" value="Coordinator" /><span>Coordinator</span></label>
+          <label class="radio-pill"><input type="radio" name="position" value="Team Lead" /><span>Team Lead</span></label>
+          <label class="radio-pill"><input type="radio" name="position" value="Member" /><span>Member</span></label>
+        </div>
+        <small class="error" data-error-for="position"></small>
+      </div>
+
+      <div class="field">
+        <label>Which team do you want to join? <span class="req">*</span></label>
+        <small class="error" data-error-for="team"></small>
+        <div class="team-grid">
+          <label class="team-card">
+            <input type="radio" name="team" value="Social Media Team" />
+            <div class="team-content">
+              <h3>Social Media Team</h3>
+              <p>Posts, reels, promotions, online engagement, public relations.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="Decor Team" />
+            <div class="team-content">
+              <h3>Decor Team</h3>
+              <p>Stage and event decoration, aesthetics, creative setups, visual design.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="Security Team" />
+            <div class="team-content">
+              <h3>Security Team</h3>
+              <p>Event security, discipline, crowd management, safe environment.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="Finance Team" />
+            <div class="team-content">
+              <h3>Finance Team</h3>
+              <p>Budgeting, sponsorships, expense tracking, financial planning.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="IT Team" />
+            <div class="team-content">
+              <h3>IT Team</h3>
+              <p>Tech support, event systems, digital tools, tech coordination.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="Management Team" />
+            <div class="team-content">
+              <h3>Management Team</h3>
+              <p>Event planning, logistics, coordination, team organization.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="PR Team" />
+            <div class="team-content">
+              <h3>PR Team</h3>
+              <p>Public relations, outreach, communication, representation.</p>
+            </div>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4 — CONTRIBUTION + COMMITMENT -->
+    <section class="step" data-step="4">
+      <h2>Your Contribution &amp; Commitment</h2>
+
+      <div class="field">
+        <label for="contribution">How do you think you can contribute to our Art Society? <span class="req">*</span></label>
+        <textarea id="contribution" name="contribution" rows="5" placeholder="Share your ideas, skills, and what you can bring to the society."></textarea>
+        <small class="hint">Minimum 30 characters.</small>
+        <small class="error" data-error-for="contribution"></small>
+      </div>
+
+      <div class="field">
+        <label>Are you comfortable covering university events on short notice? <span class="req">*</span></label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="shortNotice" value="Yes" /><span>Yes</span></label>
+          <label class="radio-pill"><input type="radio" name="shortNotice" value="No" /><span>No</span></label>
+        </div>
+        <small class="error" data-error-for="shortNotice"></small>
+      </div>
+
+      <div class="field">
+        <label>Are you currently part of any other society? <span class="req">*</span></label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="otherSociety" value="Yes" /><span>Yes</span></label>
+          <label class="radio-pill"><input type="radio" name="otherSociety" value="No" /><span>No</span></label>
+        </div>
+        <small class="error" data-error-for="otherSociety"></small>
+      </div>
+
+      <div class="field">
+        <label for="otherSocietyDetails">If yes, which society? <em>(optional)</em></label>
+        <input type="text" id="otherSocietyDetails" name="otherSocietyDetails" placeholder="e.g. Sports Society, Debating Society" />
+      </div>
+
+      <div class="field">
+        <label>Are you willing to actively participate in meetings, events and competitions throughout the semester? <span class="req">*</span></label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="activeParticipation" value="Yes" /><span>Yes</span></label>
+          <label class="radio-pill"><input type="radio" name="activeParticipation" value="No" /><span>No</span></label>
+          <label class="radio-pill"><input type="radio" name="activeParticipation" value="Maybe" /><span>Maybe</span></label>
         </div>
         <small class="hint">Active participation is expected from selected members.</small>
-        <small class="error" data-error-for="willingToParticipate"></small>
+        <small class="error" data-error-for="activeParticipation"></small>
+      </div>
+
+      <div class="field">
+        <label for="priorExperience">Do you have any prior experience in art, event management, or related fields? If yes, please describe briefly. <span class="req">*</span></label>
+        <textarea id="priorExperience" name="priorExperience" rows="4" placeholder="Write 'No prior experience' if you don't have any."></textarea>
+        <small class="error" data-error-for="priorExperience"></small>
       </div>
 
       <div class="review">
@@ -158,7 +236,7 @@
 
       <p class="privacy">
         By submitting this application, you agree that the information provided may be used by the
-        Student Council team for recruitment, shortlisting, interviews, and selection purposes.
+        Art &amp; Literary Society team for recruitment, shortlisting, interviews, and selection purposes.
       </p>
     </section>
 
@@ -176,7 +254,7 @@
   <div class="success-card">
     <div class="check">✓</div>
     <h2>Application Submitted Successfully!</h2>
-    <p>Thank you for your interest in joining the Student Council.</p>
+    <p>Thank you for your interest in joining the Art &amp; Literary Society.</p>
     <p>Your application has been received. We will review all submissions and contact shortlisted candidates about the next stage.</p>
     <p class="app-id">Your Application ID: <strong id="appIdOut"></strong></p>
     <button class="btn btn-primary" id="backHomeBtn">Back to Home</button>
@@ -184,7 +262,7 @@
 </section>
 
 <footer class="site-footer">
-  <p>Student Council Recruitment · Applications reviewed on a rolling basis.</p>
+  <p>Art &amp; Literary Society · Applications reviewed on a rolling basis.</p>
 </footer>
 
 <script src="script.js"></script>
