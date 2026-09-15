@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Art &amp; Literary Society — Recruitment</title>
-<meta name="description" content="Applications are open for students interested in joining the Art &amp; Literary Society." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Student Council Recruitment</title>
+<meta name="description" content="Applications are open for students interested in joining the Student Council." />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,11 +12,11 @@
 <header class="hero">
   <div class="hero-inner">
     <span class="badge">Applications Open</span>
-    <h1>Join the Art &amp; Literary Society Family</h1>
-    <p class="tagline">Connect. Create. Inspire.</p>
+    <h1>Student Council Recruitment</h1>
+    <p class="tagline">Join. Lead. Create. Make an Impact.</p>
     <p class="hero-desc">
-      Are you passionate about creativity, events, and making an impact?
-      Become part of a vibrant space where artists, writers, and team leads collaborate and shine.
+      We are looking for enthusiastic students to become part of the Student Council team.
+      Whether you are into media, social media, gaming, security, or events — there is a place for you.
     </p>
     <a href="#apply" class="btn btn-primary" id="applyNowBtn">Apply Now</a>
   </div>
@@ -45,7 +45,7 @@
 
       <div class="field">
         <label for="studentId">Student ID <span class="req">*</span></label>
-        <input type="text" id="studentId" name="studentId" placeholder="e.g. 245160" />
+        <input type="text" id="studentId" name="studentId" placeholder="e.g. 245168" />
         <small class="error" data-error-for="studentId"></small>
       </div>
 
@@ -57,8 +57,8 @@
 
       <div class="field">
         <label for="contactNumber">Contact Number <span class="req">*</span></label>
-        <input type="tel" id="contactNumber" name="contactNumber" placeholder="03XX-XXXXXXX" autocomplete="tel" />
-        <small class="hint">Format: 03XX-XXXXXXX or 03XXXXXXXXX</small>
+        <input type="tel" id="contactNumber" name="contactNumber" placeholder="03XXXXXXXXX" autocomplete="tel" inputmode="numeric" />
+        <small class="hint">Format: 03XXXXXXXXX (11 digits)</small>
         <small class="error" data-error-for="contactNumber"></small>
       </div>
     </section>
@@ -126,52 +126,52 @@
         <small class="error" data-error-for="team"></small>
         <div class="team-grid">
           <label class="team-card">
-            <input type="radio" name="team" value="Social Media Team" />
+            <input type="radio" name="team" value="Media" />
             <div class="team-content">
-              <h3>Social Media Team</h3>
-              <p>Posts, reels, promotions, online engagement, public relations.</p>
+              <h3>Media</h3>
+              <p>Photography, videography, event coverage, creative media production, visual documentation.</p>
             </div>
           </label>
           <label class="team-card">
-            <input type="radio" name="team" value="Decor Team" />
+            <input type="radio" name="team" value="Social Media / PR" />
             <div class="team-content">
-              <h3>Decor Team</h3>
-              <p>Stage and event decoration, aesthetics, creative setups, visual design.</p>
+              <h3>Social Media / PR</h3>
+              <p>Posts, promotions, public relations, communication, online engagement.</p>
             </div>
           </label>
           <label class="team-card">
-            <input type="radio" name="team" value="Security Team" />
+            <input type="radio" name="team" value="Gaming" />
             <div class="team-content">
-              <h3>Security Team</h3>
+              <h3>Gaming</h3>
+              <p>Gaming activities, tournaments, competitions, event coordination.</p>
+            </div>
+          </label>
+          <label class="team-card">
+            <input type="radio" name="team" value="Security" />
+            <div class="team-content">
+              <h3>Security</h3>
               <p>Event security, discipline, crowd management, safe environment.</p>
             </div>
           </label>
           <label class="team-card">
-            <input type="radio" name="team" value="Finance Team" />
+            <input type="radio" name="team" value="Decor" />
             <div class="team-content">
-              <h3>Finance Team</h3>
-              <p>Budgeting, sponsorships, expense tracking, financial planning.</p>
+              <h3>Decor</h3>
+              <p>Stage decoration, aesthetics, creative setups, event ambiance.</p>
             </div>
           </label>
           <label class="team-card">
-            <input type="radio" name="team" value="IT Team" />
+            <input type="radio" name="team" value="IT" />
             <div class="team-content">
-              <h3>IT Team</h3>
+              <h3>IT</h3>
               <p>Tech support, event systems, digital tools, tech coordination.</p>
             </div>
           </label>
           <label class="team-card">
-            <input type="radio" name="team" value="Management Team" />
+            <input type="radio" name="team" value="Management" />
             <div class="team-content">
-              <h3>Management Team</h3>
+              <h3>Management</h3>
               <p>Event planning, logistics, coordination, team organization.</p>
-            </div>
-          </label>
-          <label class="team-card">
-            <input type="radio" name="team" value="PR Team" />
-            <div class="team-content">
-              <h3>PR Team</h3>
-              <p>Public relations, outreach, communication, representation.</p>
             </div>
           </label>
         </div>
@@ -180,11 +180,11 @@
 
     <!-- STEP 4 — CONTRIBUTION + COMMITMENT -->
     <section class="step" data-step="4">
-      <h2>Your Contribution &amp; Commitment</h2>
+      <h2>Contribution &amp; Commitment</h2>
 
       <div class="field">
-        <label for="contribution">How do you think you can contribute to our Art Society? <span class="req">*</span></label>
-        <textarea id="contribution" name="contribution" rows="5" placeholder="Share your ideas, skills, and what you can bring to the society."></textarea>
+        <label for="contribution">How do you think you can contribute to the Student Council? <span class="req">*</span></label>
+        <textarea id="contribution" name="contribution" rows="5" placeholder="Share your ideas, skills, and what you can bring to the council."></textarea>
         <small class="hint">Minimum 30 characters.</small>
         <small class="error" data-error-for="contribution"></small>
       </div>
@@ -224,7 +224,7 @@
       </div>
 
       <div class="field">
-        <label for="priorExperience">Do you have any prior experience in art, event management, or related fields? If yes, please describe briefly. <span class="req">*</span></label>
+        <label for="priorExperience">Do you have any prior experience in events, media, or related fields? If yes, please describe briefly. <span class="req">*</span></label>
         <textarea id="priorExperience" name="priorExperience" rows="4" placeholder="Write 'No prior experience' if you don't have any."></textarea>
         <small class="error" data-error-for="priorExperience"></small>
       </div>
@@ -236,7 +236,7 @@
 
       <p class="privacy">
         By submitting this application, you agree that the information provided may be used by the
-        Art &amp; Literary Society team for recruitment, shortlisting, interviews, and selection purposes.
+        Student Council team for recruitment, shortlisting, interviews, and selection purposes.
       </p>
     </section>
 
@@ -254,7 +254,7 @@
   <div class="success-card">
     <div class="check">✓</div>
     <h2>Application Submitted Successfully!</h2>
-    <p>Thank you for your interest in joining the Art &amp; Literary Society.</p>
+    <p>Thank you for your interest in joining the Student Council.</p>
     <p>Your application has been received. We will review all submissions and contact shortlisted candidates about the next stage.</p>
     <p class="app-id">Your Application ID: <strong id="appIdOut"></strong></p>
     <button class="btn btn-primary" id="backHomeBtn">Back to Home</button>
@@ -262,7 +262,7 @@
 </section>
 
 <footer class="site-footer">
-  <p>Art &amp; Literary Society · Applications reviewed on a rolling basis.</p>
+  <p>Student Council Recruitment · Applications reviewed on a rolling basis.</p>
 </footer>
 
 <script src="script.js"></script>
