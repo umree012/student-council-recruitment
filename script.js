@@ -2,7 +2,7 @@
    CONFIGURATION — paste your Apps Script /exec URL here
    ============================================================ */
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbcy77dETLh0HZMeaStUk3KaHu4kpcgCJReK_c3xWiL_qpA17-jBILLTJjPaSwo0sKKVhLhQ/exec";
+  "https://script.google.com/macros/s/AKfycby77dETLh0HZMeaSTuK3KaHU4kpeCgJReK_c3xWlL_qxA17-jBiLLTjlPaSw0osKKvLhQ/exec";
 
 /* ============================================================
    ELEMENTS
